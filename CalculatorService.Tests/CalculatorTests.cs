@@ -13,40 +13,30 @@ namespace CalculatorService.Tests
     [TestFixture]
     public class CalculatorTests
     {
-        private Calculator calculator;
+        Calculator calculator = new Calculator();
 
-        [SetUp]
-        public void SetUp()
+        [Test]
+        public void Additional_MustReturnsTrueValue()
         {
-            calculator = new Calculator();
+            Assert.That(calculator.Additional(200, 300) == 500);
         }
 
         [Test]
-        public void AdditionalReturnsCorrectSum()
+        public void Subtraction_MustReturnsTrueValue()
         {
-            int result = calculator.Additional(10, 5);
-            Assert.AreEqual(15, result);
+            Assert.That(calculator.Subtraction(500, 300) == 200);
         }
 
         [Test]
-        public void SubtractionReturnsCorrectDifference()
+        public void Miltiplication_MustReturnsTrueValue()
         {
-            int result = calculator.Subtraction(15, 10);
-            Assert.AreEqual(5, result);
+            Assert.That(calculator.Miltiplication(200, 5) == 1000);
         }
 
         [Test]
-        public void MiltiplicationReturnsCorrectValue()
+        public void Division_MustReturnsTrueValue()
         {
-            int result = calculator.Miltiplication(5, 3);
-            Assert.AreEqual(15, result);
-        }
-
-        [Test]
-        public void DivisionReturnsCorrectValue()
-        {
-            int result = calculator.Division(15, 3);
-            Assert.AreEqual(5, result);
+            Assert.That(calculator.Division(1000, 100) == 10);
         }
     }
 }
